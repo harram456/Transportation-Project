@@ -455,7 +455,7 @@ from test.gc
 where CALLER -- like '%Wealthall%' 
  like '%karen%' -- and PICKUP like '%m28%' 
  and `DROP` like '%m28%';
--- where PICKUP = 'M28 2ya' or `DROP` = 'M28 2ya';    --(non of condition is satisfied so, number is 'missing')
+-- where PICKUP = '' or `DROP` = '';    --(non of condition is satisfied so, number is 'missing')
 
 
 update test.gc
@@ -488,7 +488,7 @@ SET SQL_SAFE_UPDATES = 0;
 
 update test.gc
  set mobile = 'missing'
- where caller = 'Paulsson/Liselotte Ms';
+ where caller = 'Paulsson Ms';
  -- ----------------------------------------------------------
  select*
 from test.gc
@@ -682,7 +682,7 @@ from test.gc
 where `ACCOUNT` is null                      -- `TYPE`
 group by `TYPE`;            --  Account = 2243,  card = 47,   cash = 1  (null values) 
 
---   As we know that `TYPE` card having `OTHER INFO` any serial number(eg 12, 123) means it booked from company website so account will be GETCAB
+--   As we know that `TYPE` card having `OTHER INFO` any serial number(eg 12, 123) means it booked from company website so account will be Gc
 
 
 select*
@@ -695,7 +695,7 @@ update test.gc
 set `ACCOUNT` = 'Gc'
 where `ACCOUNT` is null and `type` = 'card' and `other info` != 'no';     -- 44 rows updated
 
--- 44/47 rows are named as gectcab account remaining 3 are named as 'unknown' because these were mistakenly booked as without account by by operator  
+-- 44/47 rows are named as gc account remaining 3 are named as 'unknown' because these were mistakenly booked as without account by by operator  
 
 update test.gc
 set `ACCOUNT` = 'unknown'
@@ -713,7 +713,7 @@ where `account` is null and `TYPE` = 'cash';
 
 --                  as system is integrated with one company 'Mc' so only that account or direct from website 
 --                 jobs booked automatically, jobs from other accounts manually booked by operators and have to select account(mandatory)
---                      so missing acount having 'no' in `OTHER INFO` column means it booked from 'Minicabit'
+--                      so missing acount having 'no' in `OTHER INFO` column means it booked from 'Mc'
 
 
 update test.gc
