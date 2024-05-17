@@ -189,7 +189,7 @@ WHERE row_num > 1 and ACCOUNT= 'Mc';
 -- where MOBILE is null and PICKUP is null or `drop` is null
 -- and `ACCOUNT` is null  and VEHICLE is null;
 -- and mobile is null
--- and DRIVER IS NULL and VEHICLE NOT IN ('16 Seater', 'Mini Van') and `ACCOUNT` not in ('taxicode', 'GetCab', 'supplier.ots');
+-- and DRIVER IS NULL and VEHICLE NOT IN ('16 Seater', 'Mini Van') and `ACCOUNT` not in ('tc', 'Gc', 'oT');
 
 
 -- --------------------------------------DELETE
@@ -215,7 +215,7 @@ where `OUR REF` in (
 			WHERE row_num > 1 AND `ACCOUNT` IS NULL AND VEHICLE IS NULL);
             
             
--- ---2- Delete Rows where and DRIVER IS NULL and VEHICLE NOT IN ('16 Seater', 'Mini Van') and `ACCOUNT` not in ('taxicode', 'GetCab', 'supplier.ots');
+-- ---2- Delete Rows where and DRIVER IS NULL and VEHICLE NOT IN ('16 Seater', 'Mini Van') and `ACCOUNT` not in ('tc', 'Gc', 'OT');
 
 
 
